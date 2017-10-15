@@ -3,11 +3,12 @@ require 'pry'
 def my_all?(collection)
   if block_given?
     i = 0
+    block_return_values = []
     while i < collection.length
       yield collection[i]
       i++
     end
-    collection
+    block_return_values
   else
     puts "No block given."
   end
