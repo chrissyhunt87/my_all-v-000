@@ -8,7 +8,11 @@ def my_all?(collection)
       block_return_values << yield collection[i]
       i++
     end
-    block_return_values
+    if block_return_values.include?(false)
+      false
+    else
+      true
+    end
   else
     puts "No block given."
   end
